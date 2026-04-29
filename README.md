@@ -42,11 +42,19 @@
         },
         {
             "name": "ANTHROPIC_MODEL",
-            "value": "DeepSeek-V4-Pro"
+            "value": "deepseek-v4-pro[1m]"
         },
         {
             "name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
-            "value": "DeepSeek-V4-Pro"
+            "value": "deepseek-v4-pro[1m]"
+        },
+        {
+            "name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
+            "value": "deepseek-v4-pro[1m]"
+        },
+        {
+            "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+            "value": "deepseek-v4-flash"
         }
     ],
     "claudeCode.preferredLocation": "panel"
@@ -59,10 +67,15 @@
 |----------|------|-----|
 | `ANTHROPIC_BASE_URL` | 自定义 API 端点 | `https://api.deepseek.com/anthropic` |
 | `ANTHROPIC_AUTH_TOKEN` | 认证 Token | DeepSeek 平台的 API Key |
-| `ANTHROPIC_MODEL` | 使用的模型 | `DeepSeek-V4-Pro` |
-| `ANTHROPIC_DEFAULT_SONNET_MODEL` | 覆盖默认 Sonnet 模型 | `DeepSeek-V4-Pro` |
+| `ANTHROPIC_MODEL` | 使用的模型 | `deepseek-v4-pro[1m]`（Max 版本，1M 上下文），或 `deepseek-v4-pro`（128K）。`[1m]` 适用于复杂任务，但 Token 消耗会翻倍 |
+| `ANTHROPIC_DEFAULT_SONNET_MODEL` | 覆盖 Sonnet 模型 | `deepseek-v4-pro[1m]` |
+| `ANTHROPIC_DEFAULT_OPUS_MODEL` | 覆盖 Opus 模型 | `deepseek-v4-pro[1m]` |
+| `ANTHROPIC_DEFAULT_HAIKU_MODEL` | 覆盖 Haiku 模型（轻量任务） | `deepseek-v4-flash` |
 
 > **注意**：`claudeCode.environmentVariables` 的值是一个**数组**，每个元素是包含 `name` 和 `value` 的对象。配置键名是 `claudeCode`（驼峰），不是 `claude-code`。
+>
+> **配置推理深度**：打开 Claude Code 对话框后，点击输入框右侧 **+ 号旁边的斜杠按钮**，在其中设置 Effort 为 **MAX**，以获得最高推理能力。
+
 
 ### 3.4 面板位置（可选）
 
